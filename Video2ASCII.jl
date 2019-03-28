@@ -50,6 +50,17 @@ function play_ascii(ascii_pics::Array{String, 1}, framerate=1/8)
 end
 
 
-imgs = video2imgs("BadApple.mp4", (48, 64))
+function play_audio(video_name::String)
+    # 异步播放
+    @async run(Cmd(`mpv --no-video $video_name`))
+end
+
+
+# 转换成字符动画
+videoname = "BadApple.mp4"
+imgs = video2imgs(videoname, (48, 64))
 ascii_pics = img2ascii.(imgs)
+
+# 播放
+play_audio(videoname)
 play_ascii(ascii_pics)
