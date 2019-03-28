@@ -50,6 +50,6 @@ function play_ascii(ascii_pics::Array{String, 1}, framerate=1/8)
 end
 
 
-# imgs = video2imgs("BadApple.mp4", (48, 64))
-# ascii_pics = img2ascii.(imgs)
-# play_ascii(ascii_pics)
+imgs = video2imgs("BadApple.mp4", (48, 64))
+ascii_pics = img2ascii.(imgs)
+play_ascii(ascii_pics)
